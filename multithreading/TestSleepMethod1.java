@@ -1,0 +1,26 @@
+class TestSleepMethod1 extends Thread{  
+      
+ public void run(){
+     
+  for(int i=1;i<5;i++){  
+    try
+    {
+          System.out.println("Lazy Thread");
+        Thread.sleep(5000);}
+    catch(InterruptedException e)
+    {System.out.println("Interrupted therad "+e);}  
+    System.out.println(i);  
+  }  
+ }  
+ public static void main(String args[]){  
+  TestSleepMethod1 t1=new TestSleepMethod1();  
+ // TestSleepMethod1 t2=new TestSleepMethod1();  
+   
+  t1.start();  
+  t1.interrupt();
+     System.out.println("end of main");
+  //t2.start();  
+  
+  
+ }  
+}  
